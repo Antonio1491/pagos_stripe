@@ -6,6 +6,12 @@
             'url'   => route('home'),
             'active' => request()->routeIs( 'home'),
         ],
+        [
+            'name' => "Articles", 
+            'url'   => route('articles.index'),
+            'active' => request()->routeIs( 'articles.*'),
+        ],
+        
         
     ]
 
