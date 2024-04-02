@@ -23,4 +23,6 @@ Route::get('/', [ProductController::class, 'index'])->name('home');
 
 Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
 
-Route::get('/billings', [BillingController::class, 'index'])->name('billings.index');
+Route::get('/billings', [BillingController::class, 'index'])
+        ->middleware('auth')
+        ->name('billings.index');
