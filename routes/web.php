@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\BillingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,3 +22,5 @@ Route::get('/', function () {
 Route::get('/', [ProductController::class, 'index'])->name('home');
 
 Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
+
+Route::get('/billings', [BillingController::class, 'index'])->name('billings.index');
