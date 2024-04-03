@@ -7,7 +7,10 @@ use Livewire\Component;
 class PaymentMethod extends Component
 {
 
-    public $name;
+    public function addPaymentMethod($paymentMethod) 
+    {
+        auth()->user()->addPaymentMethod($paymentMethod);
+    }
 
     public function render()
     {
