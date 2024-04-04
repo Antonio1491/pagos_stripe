@@ -1,6 +1,6 @@
 <div>
 
-    <section class="bg-white rounded shadow-lg">
+    <section class="bg-white rounded shadow-lg mb-12">
 
         <div class="px-8 py-6">
 
@@ -29,6 +29,28 @@
                 </x-button>
             </div>
         </footer>
+    </section>
+
+    <section class="bg-white rounded shadow-lg mb-12">
+        <header class="px-8 py-6 bg-gray-50 border-b border-gray-200">
+            <h1 class="text-lg text-gray-700 font-semibold">Métodos de pago agregados</h1>
+        </header>
+        <div class="px-8 py-6">
+
+            <ul class="divide-y divide-gray-200">
+                @foreach ($paymentMethods as $paymentMethod)
+                    <li class="py-2">
+                        <p>
+                            <span class="font-semibold">{{$paymentMethod->billing_details->name}}</span>
+                            xxxx-{{$paymentMethod->card->last4}}
+                        </p>
+                        <p>Expira: </p>
+                            {{$paymentMethod->card->exp_month}}/{{$paymentMethod->card->exp_year}}
+                    </li>
+                @endforeach
+            </ul>
+
+        </div>
     </section>
 
 </div>
