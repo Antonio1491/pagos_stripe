@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class PaymentMethod extends Component
@@ -16,6 +17,13 @@ class PaymentMethod extends Component
     {
 
         auth()->user()->deletePaymentMethod($paymentMethod);
+    }
+
+    public function defaultPaymentMethod($paymentMethod)
+    {
+        // dd($paymentMethod);
+        auth()->user()->updateDefaultPaymentMethod($paymentMethod);
+
     }
 
 

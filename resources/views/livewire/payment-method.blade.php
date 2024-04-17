@@ -59,13 +59,20 @@
                                 <span class="font-semibold">{{$paymentMethod->billing_details->name}}</span>
                                 xxxx-{{$paymentMethod->card->last4}}
                             </p>
-                            <p>Expira: </p>
+                            <p>Expira: 
                                 {{$paymentMethod->card->exp_month}}/{{$paymentMethod->card->exp_year}}
+                            </p>
                         </div>
 
-                        <button class="disabled:opacity-25" wire:click="deletePaymentMethod('{{$paymentMethod->id}}')" wire:target="deletePaymentMethod('{{$paymentMethod->id}}')" wire:loading.attr="disabled">
-                            <i class="fa-regular fa-trash-can"></i>
-                        </button>
+                        <div class="flex space-x-4">
+                            <button class="disabled:opacity-25" wire:click="defaultPaymentMethod('{{$paymentMethod->id}}')" wire:target="defaultPaymentMethod('{{$paymentMethod->id}}')" wire:loading.attr="disabled">
+                                <i class="fa-regular fa-star"></i>
+                            </button>
+                            <button class="disabled:opacity-25" wire:click="deletePaymentMethod('{{$paymentMethod->id}}')" wire:target="deletePaymentMethod('{{$paymentMethod->id}}')" wire:loading.attr="disabled">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                        </div>
+
                     </li>
                 @endforeach
             </ul>
