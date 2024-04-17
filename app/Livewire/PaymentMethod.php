@@ -7,6 +7,11 @@ use Livewire\Component;
 
 class PaymentMethod extends Component
 {
+    // propiedad computada
+    public function getDefaultPaymentMethodProperty()
+    {
+        return auth()->user()->defaultPaymentMethod();
+    }
 
     public function addPaymentMethod($paymentMethod) 
     {

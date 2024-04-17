@@ -57,7 +57,15 @@
                         <div>
                             <p>
                                 <span class="font-semibold">{{$paymentMethod->billing_details->name}}</span>
+
                                 xxxx-{{$paymentMethod->card->last4}}
+
+                                @if ($this->defaultPaymentMethod->id == $paymentMethod->id)
+                                    
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded ml-2">Predeterminado</span>
+
+                                @endif
+
                             </p>
                             <p>Expira: 
                                 {{$paymentMethod->card->exp_month}}/{{$paymentMethod->card->exp_year}}
