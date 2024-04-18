@@ -52,8 +52,10 @@
         <div class="px-8 py-6">
 
             <ul class="divide-y divide-gray-200">
+
                 @foreach ($paymentMethods as $paymentMethod)
-                    <li class="py-2 flex justify-between">
+
+                    <li class="py-2 flex justify-between" wire:key="{{$paymentMethod->id}}">
                         <div>
                             <p>
                                 <span class="font-semibold">{{$paymentMethod->billing_details->name}}</span>

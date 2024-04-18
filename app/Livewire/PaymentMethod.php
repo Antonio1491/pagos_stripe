@@ -16,6 +16,13 @@ class PaymentMethod extends Component
     public function addPaymentMethod($paymentMethod) 
     {
         auth()->user()->addPaymentMethod($paymentMethod);
+
+        if(!auth()->user()->hasDefaultPaymentMethod())
+        {
+            auth()->user()->updateDefaultPaymentMethod($paymentMethod);
+        }
+
+
     }
 
     public function deletePaymentMethod($paymentMethod)
