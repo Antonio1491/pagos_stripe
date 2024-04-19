@@ -28,3 +28,5 @@ Route::get('/articles', [ArticleController::class, 'index'])->name('articles.ind
 Route::get('/billings', [BillingController::class, 'index'])
         ->middleware('auth')
         ->name('billings.index');
+
+Route::view('/gracias', 'gracias')->name('gracias');
