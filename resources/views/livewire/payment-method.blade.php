@@ -40,7 +40,6 @@
             </svg>
             <span class="sr-only">Loading...</span>
         </div>
-
     </div>
 
     @if (count($paymentMethods))
@@ -61,6 +60,7 @@
                                 <span class="font-semibold">{{$paymentMethod->billing_details->name}}</span>
 
                                 xxxx-{{$paymentMethod->card->last4}}
+<<<<<<< HEAD
 
                                 @if ($this->defaultPaymentMethod->id == $paymentMethod->id)
                                     
@@ -69,11 +69,15 @@
                                 @endif
 
                             </p>
+=======
+                            
+>>>>>>> main
                             <p>Expira: 
                                 {{$paymentMethod->card->exp_month}}/{{$paymentMethod->card->exp_year}}
                             </p>
                         </div>
 
+<<<<<<< HEAD
                         @if ($this->defaultPaymentMethod->id != $paymentMethod->id)
                             
                             <div class="flex space-x-4">
@@ -88,6 +92,17 @@
                         @endif
                            
 
+=======
+                        <div class="flex space-x-4">
+                            <button wire:click="defaultPaymentMethod('{{$paymentMethod->id}}')">
+                                <i class="fa-regular fa-star"></i>
+                            </button>
+    
+                            <button class="disabled:opacity-25" wire:click="deletePaymentMethod('{{$paymentMethod->id}}')" wire:target="deletePaymentMethod('{{$paymentMethod->id}}')" wire:loading.attr="disabled">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                        </div>
+>>>>>>> main
                     </li>
                 @endforeach
             </ul>

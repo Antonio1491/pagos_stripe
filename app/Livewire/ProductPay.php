@@ -30,7 +30,6 @@ class ProductPay extends Component
         'return_url'=>route('gracias')
     ]);
 
-        return redirect()->route('gracias');
     }
 
     public function render()
